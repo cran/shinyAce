@@ -8,7 +8,9 @@ aceEditor(outputId, value, mode, theme, vimKeyBinding = FALSE,
   readOnly = FALSE, height = "400px", fontSize = 12, debounce = 1000,
   wordWrap = FALSE, showLineNumbers = TRUE, highlightActiveLine = TRUE,
   selectionId = NULL, cursorId = NULL, hotkeys = NULL,
-  autoComplete = c("disabled", "enabled", "live"), autoCompleteList = NULL)
+  autoComplete = c("disabled", "enabled", "live"), autoCompleters = "",
+  autoCompleteList = NULL, tabSize = 4, useSoftTabs = TRUE,
+  showInvisibles = FALSE, setBehavioursEnabled = TRUE)
 }
 \arguments{
 \item{outputId}{The ID associated with this element}
@@ -47,45 +49,88 @@ Default value is \code{FALSE}.}
 
 \item{showLineNumbers}{If set to \code{TRUE}, Ace will show line numbers.}
 
-\item{highlightActiveLine}{If set to \code{TRUE}, Ace will highlight the active line.}
+\item{highlightActiveLine}{If set to \code{TRUE}, Ace will highlight the active 
+line.}
 
 \item{selectionId}{The ID associated with a change of selected text}
 
 \item{cursorId}{The ID associated with a cursor change.}
 
-\item{hotkeys}{A list whose names are ID names and whose elements are the shortcuts of keys. Shortcuts can either be a simple string or a list with elements 'win' and 'mac' that that specifies different shortcuts for win and mac (see example).}
+\item{hotkeys}{A list whose names are ID names and whose elements are the 
+shortcuts of keys. Shortcuts can either be a simple string or a list with 
+elements 'win' and 'mac' that that specifies different shortcuts for win and 
+mac (see example).}
 
 \item{autoComplete}{Enable/Disable auto code completion. Must be one of the following:
 \describe{
   \item{\code{"disabled"}}{Disable Code Autocomplete}
-  \item{\code{"enabled"}}{Enable Basic Code Autocomplete. Autocomplete can be triggered using Ctrl-Space, Ctrl-Shift-Space, or Alt-Space.}
-  \item{\code{"live"}}{Enable Live Code Autocomplete. In addition to Basic Autocomplete, it will automatically trigger at each key stroke.}
+  \item{\code{"enabled"}}{Enable Basic Code Autocomplete. Autocomplete can be 
+    triggered using Ctrl-Space, Ctrl-Shift-Space, or Alt-Space.}
+  \item{\code{"live"}}{Enable Live Code Autocomplete. In addition to Basic 
+    Autocomplete, it will automatically trigger at each key stroke.}
 }
-By default, only local completer is used where all aforementioned code pieces will be considered as candidates. Use \code{autoCompleteList} for static completions and \code{\link{aceAutocomplete}} for dynamic R code completions.}
+By default, only local completer is used where all aforementioned code pieces 
+  will be considered as candidates. Use \code{autoCompleteList} for static 
+  completions and \code{\link{aceAutocomplete}} for dynamic R code completions.}
 
-\item{autoCompleteList}{A named list that contains static code completions candidates. This can be especially useful for Non-Standard Evaluation (NSE) functions such as those in \code{dplyr} and \code{ggvis}. Each element in list should be a character array whose words will be listed under the element key. For example, to suggests column names from \code{mtcars} and \code{airquality}, you can use \code{list(mtcars = colnames(mtcars), airquality = colnames(airquality))}.}
+\item{autoCompleters}{List of completers to enable. If set to \code{NULL},
+all completers will be disabled. Select one or more of "snippet", "text", "static", 
+and "keyword" to control which completers to use. Default option is an empty character
+vector which does not effect default completion options}
+
+\item{autoCompleteList}{A named list that contains static code completions 
+candidates. This can be especially useful for Non-Standard Evaluation (NSE) 
+functions such as those in \code{dplyr} and \code{ggvis}. Each element in list 
+should be a character array whose words will be listed under the element key. 
+For example, to suggests column names from \code{mtcars} and \code{airquality}, 
+you can use \code{list(mtcars = colnames(mtcars), airquality = colnames(airquality))}.}
+
+\item{tabSize}{Set tab size. Default value is 4}
+
+\item{useSoftTabs}{Replace tabs by spaces. Default value is TRUE}
+
+\item{showInvisibles}{Show invisible characters (e.g., spaces, tabs, newline characters).
+Default value is FALSE}
+
+\item{setBehavioursEnabled}{Determines if the auto-pairing of special characters, like 
+quotation marks, parenthesis, or brackets should be enabled. Default value is TRUE.}
 }
 \description{
 Render an Ace editor on an application page.
 }
 \examples{
 \dontrun{
- aceEditor("myEditor", "Initial text for editor here", mode="r", 
-   theme="ambiance")
+ aceEditor(
+   outputId = "myEditor", 
+   value = "Initial text for editor here", 
+   mode = "r", 
+   theme = "ambiance"
+ )
    
- aceEditor("myCodeEditor", "# Enter code", mode="r",
-   hotkeys = list(helpKey="F1",
-                runKey=list(win="Ctrl-R|Ctrl-Shift-Enter",
-                            mac="CMD-ENTER|CMD-SHIFT-ENTER")
-                ),
-   wordWrap=TRUE, debounce=10) 
+ aceEditor(
+   outputId = "myCodeEditor", 
+   value = "# Enter code", 
+   mode = "r",
+   hotkeys = list(
+     helpKey = "F1",
+     runKey = list(
+       win = "Ctrl-R|Ctrl-Shift-Enter",
+       mac = "CMD-ENTER|CMD-SHIFT-ENTER"
+     )
+   ),
+   wordWrap = TRUE, debounce = 10
+ ) 
    
- aceEditor("mySmartEditor", "plot(wt ~ mpg, data=mtcars)", mode="r",
-   autoComplete="live",
-   autoCompleteList=list(mtcars=colnames(mtcars)))
+ aceEditor(
+   outputId = "mySmartEditor", 
+   value = "plot(wt ~ mpg, data = mtcars)", 
+   mode = "r",
+   autoComplete = "live",
+   autoCompleteList = list(mtcars = colnames(mtcars))
+ )
 } 
+
 }
 \author{
 Jeff Allen \email{jeff@trestletech.com}
 }
-
