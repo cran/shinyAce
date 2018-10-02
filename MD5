@@ -1,7 +1,7 @@
-41c0f52d9ca5cc7ffa7abf55591993e6 *DESCRIPTION
-33fa7e8bf45734fb83213120b6f3d759 *LICENSE
+760c980cf75c2f3a3a1e832a6534b4fa *DESCRIPTION
+ee37697abaf5de029c13970304aa2078 *LICENSE
 55c38ca4d85df6e6c8f6631a422ffd4e *NAMESPACE
-3a0ff76cd069b54ec5da4f76a0938842 *NEWS.md
+8197f5a224e3e60df2ca922ec54cd996 *NEWS.md
 3a5345b04a0d9549bb2562384d1e3960 *R/ace-autocomplete.R
 317963484cbadfdee5a4c3fa42fb73fa *R/ace-editor.R
 1e1bc861c97c61118068d64d0ff73f8c *R/get-ace-modes.R
@@ -9,7 +9,7 @@
 63297c055e67ffffbfa86a3128d8064f *R/init.R
 f08574c5c5b383a329a5349233f55d46 *R/js-quote.R
 0daf725ed95d9c9232ec946ed9cf2ffc *R/update-ace-editor.R
-d330dcf3ce15073f3881fd8d7db9db13 *README.md
+0ff375594d1a784526ab5b55f1951812 *README.md
 fcd9f342254a6b762046a7f81ddeec34 *inst/examples/01-basic/server.R
 b29005b063d0fd6a9f35e32d46d4193a *inst/examples/01-basic/ui.R
 080ffcdd2f5fe2c1fe56b579cdd28071 *inst/examples/02-eval/server.R
@@ -394,7 +394,7 @@ a3c8ff1b3c69d34b63e70f5d751d91b9 *inst/www/ace/worker-php.js
 1606ae086ae81761247b5528b1ac2781 *inst/www/shinyAce.css
 e940cf2321defe2d9c766debd9a5c50b *inst/www/shinyAce.js
 4e5a1b8712ff07cf0ea0c1d7aabf27dd *man/aceAutocomplete.Rd
-079b4030d1ab93b87078104e75681267 *man/aceEditor.Rd
+4b34ec21afb041cbd9ab3c1923e085b2 *man/aceEditor.Rd
 b32cd2a680c55c62b236ad6854f7c473 *man/getAceModes.Rd
 917a1a7fa456c70b0d2028df0ea1a9a8 *man/getAceThemes.Rd
 0054ac70aba8b98e3c5ff6919d860370 *man/jsQuote.Rd
