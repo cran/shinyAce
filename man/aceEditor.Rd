@@ -8,11 +8,12 @@ aceEditor(outputId, value, mode, theme, vimKeyBinding = FALSE,
   readOnly = FALSE, height = "400px", fontSize = 12,
   debounce = 1000, wordWrap = FALSE, showLineNumbers = TRUE,
   highlightActiveLine = TRUE, selectionId = NULL, cursorId = NULL,
-  hotkeys = NULL, autoComplete = c("disabled", "enabled", "live"),
-  autoCompleters = "", autoCompleteList = NULL, tabSize = 4,
-  useSoftTabs = TRUE, showInvisibles = FALSE,
-  setBehavioursEnabled = TRUE, autoScrollEditorIntoView = FALSE,
-  maxLines = NULL, minLines = NULL)
+  hotkeys = NULL, code_hotkeys = NULL, autoComplete = c("disabled",
+  "enabled", "live"), autoCompleters = c("snippet", "text", "keyword"),
+  autoCompleteList = NULL, tabSize = 4, useSoftTabs = TRUE,
+  showInvisibles = FALSE, setBehavioursEnabled = TRUE,
+  autoScrollEditorIntoView = FALSE, maxLines = NULL, minLines = NULL,
+  placeholder = NULL)
 }
 \arguments{
 \item{outputId}{The ID associated with this element}
@@ -61,7 +62,11 @@ line.}
 \item{hotkeys}{A list whose names are ID names and whose elements are the 
 shortcuts of keys. Shortcuts can either be a simple string or a list with 
 elements 'win' and 'mac' that that specifies different shortcuts for win and 
-mac (see example).}
+mac (see example 05).}
+
+\item{code_hotkeys}{A nested list. The first element indicates the code type (e.g., "r") 
+The second element is a list whose names are ID names and whose elements are the 
+shortcuts of keys (see \code{hotkeys})}
 
 \item{autoComplete}{Enable/Disable auto code completion. Must be one of the following:
 \describe{
@@ -75,10 +80,10 @@ By default, only local completer is used where all aforementioned code pieces
   will be considered as candidates. Use \code{autoCompleteList} for static 
   completions and \code{\link{aceAutocomplete}} for dynamic R code completions.}
 
-\item{autoCompleters}{List of completers to enable. If set to \code{NULL},
+\item{autoCompleters}{Character vector of completers to enable. If set to \code{NULL},
 all completers will be disabled. Select one or more of "snippet", "text", "static", 
-and "keyword" to control which completers to use. Default option is an empty character
-vector which does not effect default completion options}
+"keyword", and "rlang" to control which completers to use. Default option is to 
+ use the "snippet", "text", and "keyword" autocompleters}
 
 \item{autoCompleteList}{A named list that contains static code completions 
 candidates. This can be especially useful for Non-Standard Evaluation (NSE) 
@@ -102,6 +107,8 @@ quotation marks, parenthesis, or brackets should be enabled. Default value is TR
 \item{maxLines}{Maximum number of lines the editor window will expand to when autoScrollEditorIntoView is TRUE}
 
 \item{minLines}{Minimum number of lines in the editor window when autoScrollEditorIntoView is TRUE}
+
+\item{placeholder}{A string to use a placeholder when the editor has no content}
 }
 \description{
 Render an Ace editor on an application page.
