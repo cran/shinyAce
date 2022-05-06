@@ -4,16 +4,36 @@
 \alias{aceEditor}
 \title{Render Ace}
 \usage{
-aceEditor(outputId, value, mode, theme, vimKeyBinding = FALSE,
-  readOnly = FALSE, height = "400px", fontSize = 12,
-  debounce = 1000, wordWrap = FALSE, showLineNumbers = TRUE,
-  highlightActiveLine = TRUE, selectionId = NULL, cursorId = NULL,
-  hotkeys = NULL, code_hotkeys = NULL, autoComplete = c("disabled",
-  "enabled", "live"), autoCompleters = c("snippet", "text", "keyword"),
-  autoCompleteList = NULL, tabSize = 4, useSoftTabs = TRUE,
-  showInvisibles = FALSE, setBehavioursEnabled = TRUE,
-  autoScrollEditorIntoView = FALSE, maxLines = NULL, minLines = NULL,
-  placeholder = NULL)
+aceEditor(
+  outputId,
+  value,
+  mode,
+  theme,
+  vimKeyBinding = FALSE,
+  readOnly = FALSE,
+  height = "400px",
+  fontSize = 12,
+  debounce = 1000,
+  wordWrap = FALSE,
+  showLineNumbers = TRUE,
+  highlightActiveLine = TRUE,
+  selectionId = NULL,
+  cursorId = NULL,
+  hotkeys = NULL,
+  code_hotkeys = NULL,
+  autoComplete = c("disabled", "enabled", "live"),
+  autoCompleters = c("snippet", "text", "keyword"),
+  autoCompleteList = NULL,
+  tabSize = 4,
+  useSoftTabs = TRUE,
+  showInvisibles = FALSE,
+  setBehavioursEnabled = TRUE,
+  showPrintMargin = TRUE,
+  autoScrollEditorIntoView = FALSE,
+  maxLines = NULL,
+  minLines = NULL,
+  placeholder = NULL
+)
 }
 \arguments{
 \item{outputId}{The ID associated with this element}
@@ -101,6 +121,8 @@ Default value is FALSE}
 
 \item{setBehavioursEnabled}{Determines if the auto-pairing of special characters, like
 quotation marks, parenthesis, or brackets should be enabled. Default value is TRUE.}
+
+\item{showPrintMargin}{Show print margin. Default value is True}
 
 \item{autoScrollEditorIntoView}{If TRUE, expands the size of the editor window as new lines are added}
 

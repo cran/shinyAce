@@ -4,11 +4,25 @@
 \alias{updateAceEditor}
 \title{Update Ace Editor}
 \usage{
-updateAceEditor(session, editorId, value, theme, readOnly, mode, fontSize,
-  wordWrap, useSoftTabs, tabSize, showInvisibles, border = c("normal",
-  "alert", "flash"), autoComplete = c("disabled", "enabled", "live"),
+updateAceEditor(
+  session,
+  editorId,
+  value,
+  theme,
+  readOnly,
+  mode,
+  fontSize,
+  showLineNumbers,
+  wordWrap,
+  useSoftTabs,
+  tabSize,
+  showInvisibles,
+  showPrintMargin,
+  border = c("normal", "alert", "flash"),
+  autoComplete = c("disabled", "enabled", "live"),
   autoCompleters = c("snippet", "text", "keyword", "static", "rlang"),
-  autoCompleteList = NULL)
+  autoCompleteList = NULL
+)
 }
 \arguments{
 \item{session}{The Shiny session to whom the editor belongs}
@@ -32,6 +46,8 @@ determines things like syntax highlighting and code folding. Use the
 \item{fontSize}{If set, will update the font size (in px) used in the editor.
 Should be an integer.}
 
+\item{showLineNumbers}{If set to \code{TRUE}, Ace will show line numbers.}
+
 \item{wordWrap}{If set to \code{TRUE}, Ace will enable word wrapping.
 Default value is \code{FALSE}.}
 
@@ -41,6 +57,8 @@ Default value is \code{FALSE}.}
 
 \item{showInvisibles}{Show invisible characters (e.g., spaces, tabs, newline characters).
 Default value is FALSE}
+
+\item{showPrintMargin}{Show print margin. Default value is True}
 
 \item{border}{Set the \code{border} 'normal', 'alert', or 'flash'.}
 

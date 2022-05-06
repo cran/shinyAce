@@ -188,8 +188,12 @@
       editor.setKeyboardHandler("ace/keyboard/vim");
     }
 
-    if (data.hasOwnProperty("showLineNumbers") && data.showLineNumbers === false) {
-      editor.renderer.setShowGutter(false);
+    if (data.hasOwnProperty("showLineNumbers")) {
+      if (data.showLineNumbers === false) {
+        editor.renderer.setShowGutter(false);
+      } else if (data.showLineNumbers === true) {
+        editor.renderer.setShowGutter(true);
+      }
     }
 
     if (data.hasOwnProperty("highlightActiveLine") && data.highlightActiveLine === false) {
@@ -214,6 +218,10 @@
 
     if (data.hasOwnProperty("showInvisibles")) {
       editor.setOption("showInvisibles", data.showInvisibles);
+    }
+
+    if (data.hasOwnProperty("showPrintMargin")) {
+      editor.setOption("showPrintMargin", data.showPrintMargin);
     }
 
     if (data.hasOwnProperty('border')) {

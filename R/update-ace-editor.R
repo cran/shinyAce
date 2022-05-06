@@ -16,12 +16,14 @@
 #'   If \code{FALSE} (the default), it will enable editing.
 #' @param fontSize If set, will update the font size (in px) used in the editor.
 #'   Should be an integer.
+#' @param showLineNumbers If set to \code{TRUE}, Ace will show line numbers.
 #' @param wordWrap If set to \code{TRUE}, Ace will enable word wrapping.
 #'   Default value is \code{FALSE}.
 #' @param tabSize Set tab size. Default value is 4
 #' @param useSoftTabs Replace tabs by spaces. Default value is TRUE
 #' @param showInvisibles Show invisible characters (e.g., spaces, tabs, newline characters).
 #'    Default value is FALSE
+#' @param showPrintMargin Show print margin. Default value is True
 #' @param border Set the \code{border} 'normal', 'alert', or 'flash'.
 #' @param autoComplete Enable/Disable code completion. See \code{\link{aceEditor}}
 #'   for details.
@@ -43,7 +45,7 @@
 #' @export
 updateAceEditor <- function(
   session, editorId, value, theme, readOnly, mode,
-  fontSize, wordWrap, useSoftTabs, tabSize, showInvisibles,
+  fontSize, showLineNumbers, wordWrap, useSoftTabs, tabSize, showInvisibles, showPrintMargin,
   border = c("normal", "alert", "flash"),
   autoComplete = c("disabled", "enabled", "live"),
   autoCompleters = c("snippet", "text", "keyword", "static", "rlang"),
@@ -70,10 +72,12 @@ updateAceEditor <- function(
   if (!missing(mode)) theList["mode"] <- mode
   if (!missing(readOnly)) theList["readOnly"] <- readOnly
   if (!missing(fontSize)) theList["fontSize"] <- fontSize
+  if (!missing(showLineNumbers)) theList["showLineNumbers"] <- showLineNumbers
   if (!missing(wordWrap)) theList["wordWrap"] <- wordWrap
   if (!missing(tabSize)) theList["tabSize"] <- tabSize
   if (!missing(useSoftTabs)) theList["useSoftTabs"] <- useSoftTabs
   if (!missing(showInvisibles)) theList["showInvisibles"] <- showInvisibles
+  if (!missing(showPrintMargin)) theList["showPrintMargin"] <- showPrintMargin
 
   if (!missing(border)) {
     border <- match.arg(border)
