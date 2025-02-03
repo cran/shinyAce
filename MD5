@@ -1,7 +1,7 @@
-41a7321c2fc5cadaa6338a0bd5f9db81 *DESCRIPTION
+963c6c372d4612bc0b553add18fdaf6a *DESCRIPTION
 ee37697abaf5de029c13970304aa2078 *LICENSE
 24ef0b9400284ee5f103d8ef3abfef71 *NAMESPACE
-f2fad9456b1d84b96bbbed5bd0cd1e37 *NEWS.md
+84b2eef86a275f6cb4e1835cf006fb34 *NEWS.md
 c49c04a4376510e3ea317fc140599e9e *R/aaa.R
 40a41121ab3682d431dbf8c8c528f21f *R/ace-annotate.R
 8c7c00b32a0efdda03f30c73ee64b4db *R/ace-autocomplete.R
@@ -130,7 +130,7 @@ cf55ffc57626eddeda6151ca8c90daff *inst/www/ace/mode-gobstones.js
 d46cd9399334377294c6e44fd38e377a *inst/www/ace/mode-graphqlschema.js
 24dca35a4a165088cb3b7ca8d0339390 *inst/www/ace/mode-groovy.js
 c60a82b4f30442f38c0115493cb79427 *inst/www/ace/mode-haml.js
-e58800ef60f17e5e46f79e5b0bd29fec *inst/www/ace/mode-handlebars.js
+653569cb4b8b81d7233b9eb4d079f0be *inst/www/ace/mode-handlebars.js
 c58d750c2e8eb350724ae5a8540d2fa3 *inst/www/ace/mode-haskell.js
 10cbd2d4283179c9e3ff2ee38c15fe19 *inst/www/ace/mode-haskell_cabal.js
 8066a97f3391c799a15868fc81b373bb *inst/www/ace/mode-haxe.js
@@ -281,7 +281,7 @@ bf72cf5f74ae084a046049d799a6d873 *inst/www/ace/snippets/golang.js
 8f3e57079c17ba7c90256a914aa43de3 *inst/www/ace/snippets/graphqlschema.js
 0c5cc78d625930c2345d30fc001a453a *inst/www/ace/snippets/groovy.js
 fbd1ed8d8d4236990cd38c3a67112a32 *inst/www/ace/snippets/haml.js
-363062c3ce37a7b9fd6012c150d89f81 *inst/www/ace/snippets/handlebars.js
+0bf19e6faa486d0a678862fc4cb616e1 *inst/www/ace/snippets/handlebars.js
 c55ef9dbed57dabf8c2b03411282abb1 *inst/www/ace/snippets/haskell.js
 ec6fa9bf8edbe504b77b18893955a84c *inst/www/ace/snippets/haskell_cabal.js
 227cc1e609bc9788021ecacd3edd23e5 *inst/www/ace/snippets/haxe.js
